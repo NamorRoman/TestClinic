@@ -1,0 +1,41 @@
+databaseChangeLog:
+#  - preConditions:
+#    - runningAs:
+##      username: liquibase
+
+  - changeSet:
+      id: 1
+      author: Роман
+      changes:
+        - createTable:
+            tableName: dogs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: breed
+                  type: varchar(50)
+              - column:
+                  name: age
+                  type: int
+              - column:
+                  name: sex
+                  type: varchar(50)
+              - column:
+                  name: wool_type
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: aggressiveness
+                  type: boolean
