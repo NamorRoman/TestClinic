@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -21,6 +22,11 @@ public class CatController {
     @GetMapping("/all")
     public List<CatDto> readAll() {
         return service.readAll();
+    }
+
+    @GetMapping("/count")
+    public Long getCount() {
+        return service.count();
     }
 
     @PostMapping("/add")

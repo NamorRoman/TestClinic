@@ -47,4 +47,9 @@ public class DogServiceImpl implements DogService {
     public DogDto update(Long id, DogDto dto) {
         return null;
     }
+
+    @Override
+    public Long count() {
+        return repository.count();
+    }
 }

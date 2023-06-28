@@ -23,10 +23,12 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "cats")
 public class CatDto implements Serializable {
-    String name;
-    String age;
-    String breed;
-    Boolean purrable;
-    String sex;
     Long id;
+    String name;
+    String breed;
+    Byte age;
+    String sex;
+    Boolean purrable;
+
+
 }

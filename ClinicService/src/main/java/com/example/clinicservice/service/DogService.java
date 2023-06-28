@@ -17,5 +17,7 @@ public interface DogService {
 
     DogDto update(Long id, DogDto dto);
 
+    Long count();
+
 }
 

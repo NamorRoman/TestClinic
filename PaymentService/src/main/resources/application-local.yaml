@@ -1,12 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:6438/postgres
+    url: jdbc:postgresql://localhost:5434/postgres
     username: user
     password: password
 
   liquibase:
     #    url: jdbc:postgresql://localhost:5434/postgres
-    default-schema: public
+    default-schema: payment
     change-log: classpath:db.changelog/db.changelog-master.yaml
     enabled: true
     drop-first: false

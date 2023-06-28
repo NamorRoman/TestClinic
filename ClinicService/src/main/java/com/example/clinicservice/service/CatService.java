@@ -18,4 +18,6 @@ public interface CatService {
 
     CatDto update(Long id, CatDto dto);
 
+    Long count();
+
 }

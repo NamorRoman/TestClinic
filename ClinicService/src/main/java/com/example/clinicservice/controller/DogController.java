@@ -20,16 +20,21 @@ public class DogController {
     private final DogService service;
     private final DogMapper mapper;
 
+    @GetMapping("/all")
+    public List<DogDto> readAll() {
+        return service.readAll();
+    }
 
+    @GetMapping("/count")
+    public Long getCount() {
+        return service.count();
+    }
     @PostMapping("/add")
     public DogDto save(DogDto dogDto) {
         return service.save(dogDto);
     }
 
 
-    @GetMapping("/all")
-    public List<DogDto> readAll() {
-        return service.readAll();
-    }
+
 
 }

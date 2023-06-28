@@ -70,4 +70,9 @@ public class CatServiceImpl implements CatService {
         return mapper.toDto(repository.save(updateEntity));
 
     }
+
+    @Override
+    public Long count() {
+        return repository.count();
+    }
 }
