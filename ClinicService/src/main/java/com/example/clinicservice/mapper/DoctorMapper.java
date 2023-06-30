@@ -1,7 +1,7 @@
 package com.example.clinicservice.mapper;
 
 import com.example.clinicservice.dto.DoctorDto;
-import com.example.clinicservice.model.DoctorEnity;
+import com.example.clinicservice.model.DoctorEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
@@ -12,13 +12,13 @@ import java.util.List;
 public interface DoctorMapper {
 
     @Mapping(target = "id", ignore = true)
-    DoctorEnity toEntity(DoctorDto doctorDto);
+    DoctorEntity toEntity(DoctorDto doctorDto);
 
-    DoctorDto toDto(DoctorEnity doctorEnity);
+    DoctorDto toDto(DoctorEntity doctorEntity);
 
     @Mapping(target = "id", ignore = true)
-    DoctorEnity mergeToEntity(DoctorDto doctorDto,
-                            @MappingTarget DoctorEnity dogEntity);
+    DoctorEntity mergeToEntity(DoctorDto doctorDto,
+                               @MappingTarget DoctorEntity dogEntity);
 
-    List<DoctorDto> toDtoList(List<DoctorEnity> doctorEnities);
+    List<DoctorDto> toDtoList(List<DoctorEntity> doctorEnities);
 }

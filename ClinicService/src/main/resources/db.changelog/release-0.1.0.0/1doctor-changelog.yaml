@@ -1,19 +1,14 @@
 databaseChangeLog:
 #  - preConditions:
-#    - runningAs:
-##      username: liquibase
+#      - runningAs:
+#      username: user
 
   - changeSet:
       id: 1
       author: Роман
-      preConditions:
-        onFail: mark_ran
-#        tableExists:
-        tableNotExists:
-          tableName: dogs
       changes:
         - createTable:
-            tableName: dogs
+            tableName: doctors
             columns:
               - column:
                   name: id
@@ -23,24 +18,19 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: name
+                  name: first_name
                   type: varchar(50)
                   constraints:
                     nullable: false
               - column:
-                  name: breed
+                  name: last_name
                   type: varchar(50)
+                  constraints:
+                    nullable: false
               - column:
-                  name: age
+                  name: speciality_id
                   type: int
-              - column:
-                  name: sex
-                  type: varchar(50)
-              - column:
-                  name: wool_type
-                  type: varchar(50)
                   constraints:
                     nullable: false
-              - column:
-                  name: aggressiveness
-                  type: boolean
+                    foreignKeyName: speciality
+                    references: specialities(id)

@@ -4,13 +4,13 @@ spring:
     username: user
     password: password
 
-  liquibase:
-    #    url: jdbc:postgresql://localhost:5434/postgres
-    default-schema: payment
-    change-log: classpath:db.changelog/db.changelog-master.yaml
-    enabled: true
-    drop-first: false
-    password: password
+#  liquibase:
+#    #    url: jdbc:postgresql://localhost:5434/postgres
+#    default-schema: payment
+#    change-log: classpath:db.changelog/db.changelog-master.yaml
+#    enabled: true
+#    drop-first: false
+#    password: password
 
   jpa:
     hibernate:

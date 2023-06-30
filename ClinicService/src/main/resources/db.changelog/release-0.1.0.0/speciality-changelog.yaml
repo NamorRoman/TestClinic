@@ -1,0 +1,29 @@
+databaseChangeLog:
+#  - preConditions:
+#    - runningAs:
+#      username: liquibase
+
+  - changeSet:
+      id: 1
+      author: Роман
+      preConditions:
+        onFail: mark_ran
+        tableExists:
+          tableName: dogs
+      changes:
+        - createTable:
+            tableName: specialities
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: speciality
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+                    foreignKeyName: doctor_ids

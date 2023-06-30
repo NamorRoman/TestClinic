@@ -23,12 +23,25 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class DogDto implements Serializable {
 
+    Long id;
     String name;
     String breed;
-    String age;
+    Byte age;
     String sex;
-    Long id;
     @NotNull
     String woolType;
     Boolean aggressiveness;
+
+    @Override
+    public String toString() {
+        return "DogDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", breed='" + breed + '\'' +
+                ", age='" + age + '\'' +
+                ", sex='" + sex + '\'' +
+                ", woolType='" + woolType + '\'' +
+                ", aggressiveness=" + aggressiveness +
+                '}';
+    }
 }

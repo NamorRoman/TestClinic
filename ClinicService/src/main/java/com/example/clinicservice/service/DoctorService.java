@@ -17,5 +17,6 @@ public interface DoctorService {
 
     DoctorDto update(Long id, DoctorDto dto);
 
+    DoctorDto findDoctorEnitiesByFirstNameAndLastName(String firstName, String lastName);
 
 }

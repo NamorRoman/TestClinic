@@ -23,4 +23,5 @@ import java.io.Serializable;
 public class SpecialityDto implements Serializable {
 
     Long id;
+    String speciality;
 }

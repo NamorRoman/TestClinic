@@ -1,6 +1,7 @@
 package com.example.clinicservice.dto;
 
-import com.example.clinicservice.model.DoctorEnity;
+import com.example.clinicservice.model.DoctorEntity;
+import com.example.clinicservice.model.SpecialityEntity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * A DTO for the {@link DoctorEnity} entity
+ * A DTO for the {@link DoctorEntity} entity
  */
 
 @Getter
@@ -29,4 +30,6 @@ public class DoctorDto implements Serializable {
     String firstName;
     @NotNull
     String lastName;
+    @NotNull
+    SpecialityEntity speciality;
 }

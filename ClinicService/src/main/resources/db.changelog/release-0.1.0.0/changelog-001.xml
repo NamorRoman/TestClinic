@@ -6,6 +6,11 @@
         http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
     <changeSet author="Роман" id="1672954525823-1-1">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="cats"/>
+            </not>
+        </preConditions>
         <createTable remarks="Обслужмваемые коты" tableName="cats">
             <column autoIncrement="true" name="id" remarks="технический идентификатор" type="BIGINT">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="cat_pkey"/>
