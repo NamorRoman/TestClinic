@@ -2,7 +2,6 @@ package com.example.clinicservice.service.impl;
 
 import com.example.clinicservice.dto.CatDto;
 import com.example.clinicservice.mapper.CatMapper;
-import com.example.clinicservice.model.CatEntity;
 import com.example.clinicservice.repository.CatRepository;
 import com.example.clinicservice.service.CatService;
 import com.example.clinicservice.service.common.EntityNotFoundReturner;
