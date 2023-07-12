@@ -1,35 +1,22 @@
 package com.example.clinicservice.dto;
 
 import com.example.clinicservice.model.DoctorEntity;
-import com.example.clinicservice.model.SpecialityEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
+import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * A DTO for the {@link DoctorEntity} entity
  */
-
-@Getter
-@Setter
-@EqualsAndHashCode
-@NoArgsConstructor
-@AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@Data
 public class DoctorDto implements Serializable {
-
-    Long id;
+    private final Long id;
     @NotNull
-    String firstName;
+    private final String firstName;
     @NotNull
-    String lastName;
-    @NotNull
-    SpecialityEntity speciality;
+    private final String lastName;
+    private final SpecialityDto speciality;
+    private final Collection<CatDto> catPatients;
 }

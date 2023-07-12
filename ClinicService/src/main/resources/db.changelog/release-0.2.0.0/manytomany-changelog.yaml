@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 2
+    author: Роман
+    preConditions:
+      onFail: mark_ran
+      #        tableExists:
+      tableNotExists:
+        tableName: cat_patients
+    changes:
+      - createTable:
+          tableName: cat_patients
+          columns:
+            - column:
+                name: doctor_id
+                type: int
+                constraints:
+                  foreignKeyName: doctor
+                  nullable: doctors(id)
+            - column:
+                name: cat_id
+                type: int
+                constraints:
+                  nullable: false
+

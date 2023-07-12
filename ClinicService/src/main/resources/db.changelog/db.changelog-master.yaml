@@ -7,5 +7,6 @@ databaseChangeLog:
       file: db.changelog/release-0.1.0.0/1doctor-changelog.yaml
   - include:
       file: db.changelog/release-0.1.0.0/speciality-changelog.yaml
-
+  - include:
+      file: db.changelog/release-0.2.0.0/manytomany-changelog.yaml
 

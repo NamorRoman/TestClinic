@@ -25,7 +25,11 @@
     </properties>
 
 <!--    <dependencyManagement>-->
-<!--        <dependencies>-->
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            </dependency>
 <!--            <dependency>-->
 <!--                <groupId>org.keycloak.bom</groupId>-->
 <!--                <artifactId>keycloak-adapter-bom</artifactId>-->
@@ -36,18 +40,18 @@
 <!--        </dependencies>-->
 <!--    </dependencyManagement>-->
 
-    <dependencies>
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-spring-boot-2-adapter</artifactId>
-            <version>21.1.2</version>
-        </dependency>
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>org.keycloak</groupId>-->
+<!--            <artifactId>keycloak-spring-boot-2-adapter</artifactId>-->
+<!--            <version>21.1.2</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-spring-boot-starter</artifactId>
-            <version>21.1.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.keycloak</groupId>-->
+<!--            <artifactId>keycloak-spring-boot-starter</artifactId>-->
+<!--            <version>21.1.2</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.sun.jersey.contribs</groupId>
@@ -65,10 +69,10 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-security</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

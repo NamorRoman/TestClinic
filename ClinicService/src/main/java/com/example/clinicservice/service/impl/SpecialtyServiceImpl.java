@@ -2,6 +2,7 @@ package com.example.clinicservice.service.impl;
 
 import com.example.clinicservice.dto.SpecialityDto;
 import com.example.clinicservice.mapper.SpecialityMapper;
+import com.example.clinicservice.model.SpecialityEntity;
 import com.example.clinicservice.repository.SpecialityRepository;
 import com.example.clinicservice.service.SpecialtyService;
 import com.example.clinicservice.service.common.EntityNotFoundReturner;
@@ -66,6 +67,13 @@ public class SpecialtyServiceImpl implements SpecialtyService {
         final var updateEntity = mapper.mergeToEntity(dto, targetEntity);
 
         return mapper.toDto(repository.save(updateEntity));
+    }
+
+    @Override
+    public SpecialityDto findOrCreate(String speciality) {
+
+                return mapper.toDto(repository.findBySpecialityName(speciality)
+                .orElse(repository.save(new SpecialityEntity(1L, speciality))));
     }
 
 }

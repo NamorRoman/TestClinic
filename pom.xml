@@ -22,6 +22,7 @@
         <module>ClinicService</module>
         <module>PaymentService</module>
         <module>Gateway</module>
+        <module>MongoService</module>
     </modules>
 
     <properties>

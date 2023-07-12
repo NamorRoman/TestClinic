@@ -2,9 +2,13 @@ package com.example.clinicservice.service;
 
 
 import com.example.clinicservice.dto.CatDto;
+import com.example.clinicservice.dto.DoctorDto;
 import com.example.clinicservice.model.CatEntity;
+import com.example.clinicservice.model.DoctorEntity;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Set;
 
 
 public interface CatService {
@@ -22,5 +26,7 @@ public interface CatService {
     Long count();
 
     CatDto findCatEntityByName(String name);
+
+    List<DoctorDto> findDoctorsByCatId(Long id);
 
 }

@@ -1,7 +1,11 @@
 package com.example.clinicservice.service.impl;
 
 import com.example.clinicservice.dto.CatDto;
+import com.example.clinicservice.dto.DoctorDto;
 import com.example.clinicservice.mapper.CatMapper;
+import com.example.clinicservice.mapper.DoctorMapper;
+import com.example.clinicservice.model.CatEntity;
+import com.example.clinicservice.model.DoctorEntity;
 import com.example.clinicservice.repository.CatRepository;
 import com.example.clinicservice.service.CatService;
 import com.example.clinicservice.service.common.EntityNotFoundReturner;
@@ -9,10 +13,13 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -25,6 +32,7 @@ public class CatServiceImpl implements CatService {
 
     CatRepository repository;
     CatMapper mapper;
+    DoctorMapper doctorMapper;
     EntityNotFoundReturner notFoundReturner;
 
 
@@ -79,5 +87,9 @@ public class CatServiceImpl implements CatService {
     @Override
     public CatDto findCatEntityByName(String name) {
         return mapper.toDto(repository.findCatEntityByName(name));
+    }
+
+    public List<DoctorDto> findDoctorsByCatId(@Param("id") Long id) {
+        return doctorMapper.toDtoList(repository.findDoctorsByCatId(id));
     }
 }

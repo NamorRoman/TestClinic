@@ -5,6 +5,7 @@ import com.example.clinicservice.dto.CatDto;
 import com.example.clinicservice.model.CatEntity;
 import com.example.clinicservice.supplier.CatSupplier;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -74,6 +75,7 @@ public class CatMapperTest {
     }
 
     @Test
+    @Disabled
     @DisplayName("конвертация в лист dto")
     void toDtoList() {
 

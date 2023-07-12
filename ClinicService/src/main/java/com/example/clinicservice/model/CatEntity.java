@@ -7,14 +7,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -48,6 +54,17 @@ public class CatEntity {
 
     @Column(name = "purrable")
     Boolean purrable;
+
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "cat_patients",
+            joinColumns = @JoinColumn(name = "cat_id"),
+            inverseJoinColumns = @JoinColumn(name = "doctor_id"))
+    Collection<DoctorEntity> doctors;
+
+    public CatEntity(Long id, String name, String breed, Byte age, String sex, Boolean purrable) {
+    }
+
 
     @Override
     public boolean equals(Object o) {

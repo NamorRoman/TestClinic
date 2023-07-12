@@ -2,8 +2,12 @@ package com.example.clinicservice.service.impl;
 
 import com.example.clinicservice.dto.DoctorDto;
 import com.example.clinicservice.mapper.DoctorMapper;
+import com.example.clinicservice.model.CatEntity;
 import com.example.clinicservice.model.DoctorEntity;
+import com.example.clinicservice.model.SpecialityEntity;
+import com.example.clinicservice.repository.CatRepository;
 import com.example.clinicservice.repository.DoctorRepository;
+import com.example.clinicservice.repository.SpecialityRepository;
 import com.example.clinicservice.service.DoctorService;
 import com.example.clinicservice.service.common.EntityNotFoundReturner;
 import lombok.AccessLevel;
@@ -14,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -25,6 +30,8 @@ public class DoctorServiceImpl implements DoctorService {
     static String msg = "Не найден доктор с ID ";
 
     DoctorRepository repository;
+    SpecialityRepository specialityRepository;
+    CatRepository catRepository;
 
     DoctorMapper mapper;
 
@@ -51,9 +58,27 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto save(DoctorDto dto) {
+
+//        TODO check isPresent
+//        SpecialityEntity spec = specialityRepository
+//                .findById(dto.getSpeciality().getId()).orElseThrow();
+
+
+//        Optional<SpecialityEntity> spec = specialityRepository.findById(dto.getSpecialityID());
+
+//        List<CatEntity> catPatients = dto.getCatPatients()
+//                .stream().map(x -> catRepository.findById(x.getId()))
+//                .filter(Optional::isPresent).map(Optional::get).toList();
+
+//        DoctorEntity newDoctor = mapper.toEntity(dto);
+//        newDoctor.setSpeciality(spec);
+//        newDoctor.setCatPatients(catPatients);
+
         var res = repository.save(mapper.toEntity(dto));
+//        var res = repository.save(mapper.toEntity(dto));
+
         var resDto = mapper.toDto(res);
-        log.info("Cat is added {}", resDto);
+        log.info("Doctor is added {}", resDto);
         return resDto;
     }
 
@@ -69,4 +94,13 @@ public class DoctorServiceImpl implements DoctorService {
     public DoctorDto findDoctorEnitiesByFirstNameAndLastName(String firstName, String lastName) {
         return mapper.toDto(repository.findDoctorEnitiesByFirstNameAndLastName(firstName, lastName));
     }
+
+//    @Override
+//    public List<DoctorDto> findDoctorEntitiesByCatPatients(Long catId) {
+//
+//
+//        return mapper.toDtoList(repository.findDoctorEntitiesByCatPatients(catId));
+//    }
+
+
 }
