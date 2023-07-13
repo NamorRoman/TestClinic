@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/MongoService/.gitignore
+/Gateway/.gitignore
