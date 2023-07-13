@@ -102,5 +102,6 @@ public class DoctorServiceImpl implements DoctorService {
 //        return mapper.toDtoList(repository.findDoctorEntitiesByCatPatients(catId));
 //    }
 
+dsadasdasdsadsad
 
 }
