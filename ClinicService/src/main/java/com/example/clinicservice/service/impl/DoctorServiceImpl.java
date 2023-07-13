@@ -94,14 +94,4 @@ public class DoctorServiceImpl implements DoctorService {
     public DoctorDto findDoctorEnitiesByFirstNameAndLastName(String firstName, String lastName) {
         return mapper.toDto(repository.findDoctorEnitiesByFirstNameAndLastName(firstName, lastName));
     }
-
-//    @Override
-//    public List<DoctorDto> findDoctorEntitiesByCatPatients(Long catId) {
-//
-//
-//        return mapper.toDtoList(repository.findDoctorEntitiesByCatPatients(catId));
-//    }
-
-dsadasdasdsadsad
-
 }
